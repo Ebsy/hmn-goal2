@@ -34,6 +34,7 @@ function create(req, res, next) {
 }
 
 function getOrganizations(req, res, next) {
+  // DO A LIST!
   Organization.get(req.organization.name)
     .then(organization => res.json(organization.robots))
     .catch(e => next(e));
@@ -44,7 +45,7 @@ function getOrganizations(req, res, next) {
  * @returns 204 status
  */
 function remove(req, res, next) {
-  Organization.remove(req.organization.name)
+  Organization.remove(req.params.name)
     .then(() => res.status(204).send())
     .catch(e => next(e));
 }
@@ -53,21 +54,28 @@ function remove(req, res, next) {
  * Get organization
  * @returns {Organization}
  */
-function getSingleOrganization(req, res) {
-  return res.json(req.organization);
+function getSingleOrganization(req, res, next) {
+  // return res.json(req.organization);
+  return Organization.get(req.params.name)
+    .then(organization => res.json(organization))
+    .catch(e => next(e));
 }
 
 function updateSingleOrganization(req, res, next) {
-  debug(req);
-  const newAddress = req.body.address;
-
-  const { organization } = req;
-  organization.address = newAddress;
-
-  return organization
-    .save()
-    .then(() => res.json(req.organization))
+  debug(req.params);
+  return Organization.updateSingle(req.params.name, req.body.address)
+    .then(organization => res.json(organization))
     .catch(e => next(e));
+
+  // const newAddress = req.body.address;
+
+  // const { organization } = req;
+  // organization.address = newAddress;
+
+  // return organization
+  //   .save()
+  //   .then(() => res.json(req.organization))
+  //   .catch(e => next(e));
 }
 
 export default {
