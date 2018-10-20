@@ -2,6 +2,7 @@ import express from 'express';
 import userRoutes from './user.route';
 import authRoutes from './auth.route';
 import robotRoutes from './robot.route';
+import organizationRoutes from './organization.route';
 
 const router = express.Router(); // eslint-disable-line new-cap
 
@@ -16,5 +17,8 @@ router.use('/auth', authRoutes);
 
 // mount robot routes at /robot
 router.use('/robots', robotRoutes);
+
+// mount organization routes at /organizations
+router.use('/organizations', organizationRoutes);
 
 export default router;
