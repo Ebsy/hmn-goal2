@@ -1,0 +1,86 @@
+{
+  "name": "hmn-goal2",
+  "version": "1.0.0",
+  "description": "REST backend es6/babel/mongoose/jwt",
+  "author": "Neil Ebrey <neil.ebrey@gmail.com>",
+  "main": "index.js",
+  "private": true,
+  "engines": {
+    "node": ">=4.8.0",
+    "npm": ">=2.15.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ebsy/hmn-goal2.git"
+  },
+  "scripts": {
+    "start": "gulp serve",
+    "start:debug": "cross-env DEBUG=hmn-goal2:* npm start",
+    "docs": "documentation build server/** -f html -o docs",
+    "build": "gulp",
+    "lint": "esw *.js server config --color",
+    "lint:watch": "npm run lint -- --watch",
+    "release": "standard-version",
+    "test": "cross-env NODE_ENV=test nyc mocha --timeout 10000 --ui bdd --reporter spec --colors --require babel-core/register server/tests --recursive --exit",
+    "test:watch": "npm run test -- --watch"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "bluebird": "^3.5.2",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cookie-parser": "1.4.3",
+    "cors": "^2.8.4",
+    "debug": "^4.1.0",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "express-validation": "^1.0.2",
+    "express-winston": "^3.0.1",
+    "helmet": "^3.14.0",
+    "http-status": "^1.2.0",
+    "joi": "^14.0.0",
+    "jsonwebtoken": "^8.3.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.2.8",
+    "morgan": "^1.9.1",
+    "standard-version": "^4.4.0",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "commitizen": "^3.0.3",
+    "cross-env": "^5.2.0",
+    "del": "^3.0.0",
+    "documentation": "^8.1.2",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-watch": "^4.0.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-util": "^3.0.7",
+    "husky": "^1.1.2",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "nyc": "^13.1.0",
+    "prettier": "^1.14.3",
+    "run-sequence": "^2.2.1",
+    "supertest": "^3.3.0"
+  },
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test"
+    }
+  }
+}

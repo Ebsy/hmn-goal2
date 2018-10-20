@@ -1,0 +1,21 @@
+logs
+*.log
+npm-debug.log*
+dist
+lib-cov
+coverage
+node_modules
+docs
+.nyc_output
+
+# General
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*

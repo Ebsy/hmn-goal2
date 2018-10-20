@@ -1,0 +1,13 @@
+{
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "no-underscore-dangle": [0],
+    "new-cap": [0]
+  },
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "extends": ["airbnb", "prettier"]
+}
