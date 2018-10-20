@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/Ebsy/hmn-goal2/compare/v1.1.0...v1.1.1) (2018-10-20)
+
+
+### Bug Fixes
+
+* organizations now require auth ([acd5550](https://github.com/Ebsy/hmn-goal2/commit/acd5550))
+
+
+
 <a name="1.1.0"></a>
 # 1.1.0 (2018-10-20)
 
