@@ -90,18 +90,18 @@ describe('## Auth APIs', () => {
     });
   });
 
-  describe('# DELETE /api/users', () => {
-    it('should delete user', done => {
-      request(app)
-        .delete('/api/users')
-        .set('Authorization', jwtToken)
-        .expect(httpStatus.NO_CONTENT)
-        .then(() => {
-          // expect(res.body.message)
-          //   .to.equal('');
-          done();
-        })
-        .catch(done);
-    });
-  });
+  // describe('# DELETE /api/users', () => {
+  //   it('should delete user', done => {
+  //     request(app)
+  //       .delete('/api/users')
+  //       .set('Authorization', jwtToken)
+  //       .expect(httpStatus.NO_CONTENT)
+  //       .then(() => {
+  //         // expect(res.body.message)
+  //         //   .to.equal('');
+  //         done();
+  //       })
+  //       .catch(done);
+  //   });
+  // });
 });
