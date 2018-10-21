@@ -13,6 +13,10 @@ describe('## Organizations API', () => {
   //   mongoose.connection.db.dropCollection('organizations', done);
   // });
 
+  after(done => {
+    mongoose.connection.db.dropDatabase(done);
+  });
+
   let jwtToken;
 
   const validUserCredentials = {
